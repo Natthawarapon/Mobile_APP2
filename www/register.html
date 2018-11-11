@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script src="ejs.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
+    <script src="cordova.js"></script>
+    <script>
+        // Initialize Firebase
+
+
+            var config = {
+            apiKey: "AIzaSyDAmxL1R5W6DJzgG0XK5A1w5uKEBYHq_sg",
+            authDomain: "shopee-9be77.firebaseapp.com"
+        };
+
+   firebase.initializeApp(config);
+    </script>
+    <style>
+        .toolbaricon {
+            padding-left: 5px;
+            padding-bottom: 5px;
+            padding-right: 5px;
+            color: orange;
+        }
+    </style>
+</head>
+
+
+<body>
+    <ons-page>
+        <div style="text-align: center; margin-top: 30px;">
+            <p>
+                <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
+            </p>
+            <p>
+                <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
+            </p>
+            <p style="margin-top: 30px;">
+                <ons-button onclick="register()">Sign Up for New</ons-button>
+            </p>
+        </div>
+    </ons-page>
+    <script>
+        var register = function() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            firebase.auth().createUserWithEmailAndPassword(username, password).catch(function (error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                ons.notification.alert(errorCode + ':' + errorMessage);
+                // ...
+            });
+}
+
+            firebase.auth().onAuthStateChanged(function (user) {
+                if (user) {
+                    // User is signed in.
+                    //Send user to home.html
+                    window.location.href = 'login.html';
+                }
+            })
+    </script>
+</body>
+
+
+
+
+</html>
