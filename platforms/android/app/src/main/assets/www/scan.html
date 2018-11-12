@@ -7,45 +7,68 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="cordova.js"></script>
     <title>scan</title>
+
+    <style>
+        #box {
+            position: fixed;
+            /* Sit on top of the page content */
+            display: none;
+            /* Hidden by default */
+            width: 100%;
+            /* Full width (cover the whole page) */
+            height: 100%;
+            /* Full height (cover the whole page) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Black background with opacity */
+            z-index: 2;
+            /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer;
+            /* Add a pointer on hover */
+        }
+
+        #overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 50px;
+            color: white;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+        }
+    </style>
+
 </head>
 
 <body>
     <div id="box">
-        <div id="overlay">
-                
+    <div id="overlay"> <img src="img\overlayQR.png" alt="" ></div>
+       
+    </div>
 
-        </div>
-        
-      </div>
- 
-<script>
+    <script>
 
-document.addEventListener("deviceready", onDeviceReady, false);
+        document.addEventListener("deviceready", onDeviceReady, false);
+        function onDeviceReady() {
+            document.getElementById("box").style.display = "block";
+            QRScanner.scan(displayContents);
 
-function onDeviceReady() {
-    // Now safe to use device APIs
-
-    QRScanner.scan(displayContents);
-
-    function displayContents(err, text) {
-        if (err) {
-
-        } else {
-
-            localStorage.setItem("code", text);
-            QRScanner.hide();
-
-            window.location.href = 'home.html';
-
+            function displayContents(err, text) {
+                if (err) {
+                } else {
+                    localStorage.setItem("code", text)
+                    QRScanner.hide();
+                    window.location.href = 'index.html';
+                }
+            }
+            QRScanner.show();
         }
-    }
-
-    QRScanner.show();
-}
-
 //   document.getElementById('overlay').innerHTML = camera();
 
-</script>
+    </script>
 
 </body>
 

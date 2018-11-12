@@ -2,11 +2,11 @@
 <html>
 
 <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
     <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
     <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="ejs.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.7/firebase.js"></script>
     <script src="cordova.js"></script>
@@ -14,12 +14,12 @@
         // Initialize Firebase
 
 
-            var config = {
+        var config = {
             apiKey: "AIzaSyDAmxL1R5W6DJzgG0XK5A1w5uKEBYHq_sg",
             authDomain: "shopee-9be77.firebaseapp.com"
         };
 
-   firebase.initializeApp(config);
+        firebase.initializeApp(config);
     </script>
     <style>
         .toolbaricon {
@@ -28,26 +28,50 @@
             padding-right: 5px;
             color: orange;
         }
+
+        .btn_signup {
+            background-color: #11b911;
+        }
+        .body{
+            background-color: #ebdd1b;
+        }
+        .page, .page__background, .page__content {
+    background-color:rgb(255, 255, 255);
+    position: absolute;
+}
     </style>
 </head>
 
 
 <body>
     <ons-page>
-        <div style="text-align: center; margin-top: 30px;">
-            <p>
-                <ons-input id="username" modifier="underbar" placeholder="Username" float></ons-input>
-            </p>
-            <p>
-                <ons-input id="password" modifier="underbar" type="password" placeholder="Password" float></ons-input>
-            </p>
-            <p style="margin-top: 30px;">
-                <ons-button onclick="register()">Sign Up for New</ons-button>
-            </p>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div style="text-align: center; margin-top: 30px;">
+                        <h3>Sign Up to WOW Shopping</h3>
+                        <br>
+                        <div class="form-group">
+                                <input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email">
+                                
+                              </div>
+                              <div class="form-group">
+                        
+                                <input type="password" class="form-control" id="password" placeholder="Password">
+                              </div>
+                        
+                        <p style="margin-top: 30px;">
+                            <ons-button onclick="register()" modifier="large" class="btn_signup"> Sign Up </ons-button>
+                        </p>
+
+                    </div>
+                </div>
+            </div>
         </div>
+
     </ons-page>
     <script>
-        var register = function() {
+        var register = function () {
             var username = document.getElementById('username').value;
             var password = document.getElementById('password').value;
             firebase.auth().createUserWithEmailAndPassword(username, password).catch(function (error) {
@@ -57,15 +81,15 @@
                 ons.notification.alert(errorCode + ':' + errorMessage);
                 // ...
             });
-}
+        }
 
-            firebase.auth().onAuthStateChanged(function (user) {
-                if (user) {
-                    // User is signed in.
-                    //Send user to home.html
-                    window.location.href = 'login.html';
-                }
-            })
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                //Send user to home.html
+                window.location.href = 'login.html';
+            }
+        })
     </script>
 </body>
 
