@@ -32,6 +32,14 @@ module.exports = [
       "cordova.InAppBrowser.open",
       "window.open"
     ]
+  },
+  {
+    "id": "cordova-plugin-qrscanner.QRScanner",
+    "file": "plugins/cordova-plugin-qrscanner/www/www.min.js",
+    "pluginId": "cordova-plugin-qrscanner",
+    "clobbers": [
+      "QRScanner"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -41,7 +49,8 @@ module.exports.metadata =
   "cordova-plugin-buildinfo": "2.0.2",
   "cordova-universal-links-plugin": "1.2.1",
   "cordova-plugin-browsertab": "0.2.0",
-  "cordova-plugin-inappbrowser": "3.0.0"
+  "cordova-plugin-inappbrowser": "3.0.0",
+  "cordova-plugin-qrscanner": "2.6.0"
 };
 // BOTTOM OF METADATA
 });

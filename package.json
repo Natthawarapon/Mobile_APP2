@@ -27,7 +27,8 @@
             "cordova-plugin-buildinfo": {},
             "cordova-universal-links-plugin": {},
             "cordova-plugin-browsertab": {},
-            "cordova-plugin-inappbrowser": {}
+            "cordova-plugin-inappbrowser": {},
+            "cordova-plugin-qrscanner": {}
         },
         "platforms": [
             "browser",

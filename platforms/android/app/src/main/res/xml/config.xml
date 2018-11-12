@@ -17,6 +17,9 @@
     <feature name="InAppBrowser">
         <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
     </feature>
+    <feature name="QRScanner">
+        <param name="android-package" value="com.bitpay.cordova.qrscanner.QRScanner" />
+    </feature>
     <universal-links>
         <host name="wowshoppe.page.link/geWN" scheme="https" />
         <host name="shopee-9be77.firebaseapp.com" scheme="https">

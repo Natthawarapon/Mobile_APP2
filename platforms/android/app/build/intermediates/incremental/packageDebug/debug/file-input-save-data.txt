@@ -1,7 +1,8 @@
 #Internal package file, do not edit.
-#Sun Nov 11 17:53:16 ICT 2018
+#Mon Nov 12 13:15:02 ICT 2018
 17.baseType=DIRECTORY
 4.path=www/ejs.js
+22.set=ASSET
 8.set=DEX
 19.baseType=DIRECTORY
 11.set=ASSET
@@ -9,7 +10,7 @@
 4.baseType=DIRECTORY
 14.base=D\:\\5930213012\\cordova\\Test\\hello\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 16.set=ASSET
-count=22
+count=23
 6.base=D\:\\5930213012\\cordova\\Test\\hello\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 13.path=www/js/index.js
 6.baseType=DIRECTORY
@@ -48,6 +49,7 @@ count=22
 2.base=D\:\\5930213012\\cordova\\Test\\hello\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 18.baseType=DIRECTORY
 1.path=www/plugins/cordova-universal-links-plugin/www/universal_links.js
+22.base=D\:\\5930213012\\cordova\\Test\\hello\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 19.set=ASSET
 0.set=ASSET
 1.baseType=DIRECTORY
@@ -68,6 +70,8 @@ count=22
 13.set=ASSET
 2.path=www/register.html
 9.baseType=DIRECTORY
+22.baseType=DIRECTORY
+22.path=www/plugins/cordova-plugin-qrscanner/www/www.min.js
 18.set=ASSET
 19.base=D\:\\5930213012\\cordova\\Test\\hello\\platforms\\android\\app\\build\\intermediates\\assets\\debug
 12.base=D\:\\5930213012\\cordova\\Test\\hello\\platforms\\android\\app\\build\\intermediates\\assets\\debug

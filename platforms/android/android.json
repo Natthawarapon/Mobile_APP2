@@ -27,6 +27,28 @@
             {
               "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
               "count": 1
+            },
+            {
+              "xml": "<feature name=\"QRScanner\"><param name=\"android-package\" value=\"com.bitpay.cordova.qrscanner.QRScanner\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "AndroidManifest.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.CAMERA\" android:required=\"false\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-feature android:name=\"android.hardware.camera\" android:required=\"false\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-feature android:name=\"android.hardware.camera.front\" android:required=\"false\" />",
+              "count": 1
             }
           ]
         }
@@ -47,6 +69,9 @@
       "PACKAGE_NAME": "com.example.hello"
     },
     "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-plugin-qrscanner": {
       "PACKAGE_NAME": "com.example.hello"
     }
   },
@@ -84,6 +109,14 @@
         "cordova.InAppBrowser.open",
         "window.open"
       ]
+    },
+    {
+      "id": "cordova-plugin-qrscanner.QRScanner",
+      "file": "plugins/cordova-plugin-qrscanner/www/www.min.js",
+      "pluginId": "cordova-plugin-qrscanner",
+      "clobbers": [
+        "QRScanner"
+      ]
     }
   ],
   "plugin_metadata": {
@@ -91,6 +124,7 @@
     "cordova-plugin-buildinfo": "2.0.2",
     "cordova-universal-links-plugin": "1.2.1",
     "cordova-plugin-browsertab": "0.2.0",
-    "cordova-plugin-inappbrowser": "3.0.0"
+    "cordova-plugin-inappbrowser": "3.0.0",
+    "cordova-plugin-qrscanner": "2.6.0"
   }
 }
